@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String> titleList = ['Amazon', '楽天', 'Yahoo!', 'test'];
-  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const NextPage()));
+                          builder: (context) => NextPage(titleList[index])));
                 },
               ),
               const Divider(height: 0),
@@ -65,11 +64,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
     );
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
   }
 }
